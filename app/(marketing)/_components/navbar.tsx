@@ -1,9 +1,14 @@
 "use client";
 
+import { signIn, useSession } from "next-auth/react";
+
 import Image from "next/image";
 
 import { useScrollTop } from "@/hooks/use-scroll-top";
+
 import { Button } from "@/components/ui/button";
+
+import { UserNav } from "@/components/user-nav";
 
 import { Link as ScrollLink } from "react-scroll";
 
@@ -17,6 +22,7 @@ const navigation = [
 ];
 
 export const Navbar = () => {
+  const { data: session } = useSession();
   const scrolled = useScrollTop();
 
   return (
@@ -41,9 +47,13 @@ export const Navbar = () => {
         ))}
       </div>
       <div className="flex items-center gap-x-2">
-        <Button variant="ghost" size="icon">
-          <Key className="w-6 h-6" />
-        </Button>
+        {session?.user ? (
+          <UserNav user={session.user} />
+        ) : (
+          <Button variant="ghost" size="icon" onClick={() => signIn()}>
+            <Key className="w-6 h-6" />
+          </Button>
+        )}
         <Button variant="ghost" size="icon">
           <ShoppingBag className="w-6 h-6" />
         </Button>
