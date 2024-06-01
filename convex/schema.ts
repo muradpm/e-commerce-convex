@@ -69,4 +69,16 @@ const authTables = {
 
 export default defineSchema({
   ...authTables,
+
+  category: defineTable({
+    name: v.string(),
+    image: v.string(),
+  }),
+
+  goods: defineTable({
+    name: v.string(),
+    image: v.string(),
+    price: v.number(),
+    description: v.string(),
+  }),
 });
