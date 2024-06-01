@@ -1,35 +1,45 @@
 "use client";
 
-import Link from "next/link";
+import Image from "next/image";
 
 import { Skeleton } from "../ui/skeleton";
-
 import { GoodsCardOverlay } from "./overlay";
 import { GoodsCardFooter } from "./footer";
 
 interface GoodsCardProps {
-  id: string;
-  title: string;
+  description: string;
+  name: string;
+  price: number;
+  image: string;
   onClick: () => void;
 }
 
-export const GoodsCard = ({ id, title, onClick }: GoodsCardProps) => {
+export const GoodsCard = ({
+  description,
+  name,
+  price,
+  image,
+  onClick,
+}: GoodsCardProps) => {
   return (
-    <Link href={`/form/${id}`}>
-      <div className="group aspect-[308/278] border shadow-sm rounded-lg flex flex-col justify-between overflow-hidden relative">
-        <div className="relative flex-1 bg-background">
-          {/* TODO: Try to add images to the overlay */}
-          <GoodsCardOverlay />
-        </div>
-        <GoodsCardFooter title={title} onClick={onClick} />
+    <div className="group aspect-[100/127] h-[300px] shadow-sm rounded-lg flex flex-col justify-between overflow-hidden relative cursor-pointer">
+      <div className="relative flex-1 bg-background">
+        <Image src={image} alt={name} fill className="object-cover" />
+        <GoodsCardOverlay />
       </div>
-    </Link>
+      <GoodsCardFooter
+        title={name}
+        description={description}
+        price={price}
+        onClick={onClick}
+      />
+    </div>
   );
 };
 
 GoodsCard.Skeleton = function GoodsCardSkeleton() {
   return (
-    <div className="aspect-[100/127] rounded-lg overflow-hidden">
+    <div className="aspect-[100/100] rounded-lg overflow-hidden">
       <Skeleton className="h-full w-full" />
     </div>
   );
