@@ -18,7 +18,7 @@ import { Key, ShoppingBag } from "lucide-react";
 
 const navigation = [
   { name: "Главная", href: "main" },
-  { name: "Товары", href: "products" },
+  { name: "Товары", href: "goods" },
 ];
 
 export const Navbar = () => {
