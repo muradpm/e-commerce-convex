@@ -14,7 +14,9 @@ import { Link as ScrollLink } from "react-scroll";
 
 import { cn } from "@/lib/utils";
 
-import { Key, ShoppingBag } from "lucide-react";
+import { Key } from "lucide-react";
+
+import { ShoppingCard } from "@/components/shopping-card";
 
 const navigation = [
   { name: "Главная", href: "main" },
@@ -33,18 +35,20 @@ export const Navbar = () => {
       )}
     >
       <Image src="/logo.svg" width={40} height={40} alt="Footer logo" />
-      <div className="lg:flex lg:gap-x-12">
-        {navigation.map((item) => (
-          <ScrollLink
-            key={item.name}
-            to={item.href}
-            smooth={true}
-            duration={500}
-            className="text-xl font-normal leading-6 cursor-pointer"
-          >
-            {item.name}
-          </ScrollLink>
-        ))}
+      <div className="ml-8">
+        <div className="lg:flex lg:gap-x-12">
+          {navigation.map((item) => (
+            <ScrollLink
+              key={item.name}
+              to={item.href}
+              smooth={true}
+              duration={500}
+              className="text-xl font-normal leading-6 cursor-pointer"
+            >
+              {item.name}
+            </ScrollLink>
+          ))}
+        </div>
       </div>
       <div className="flex items-center gap-x-2">
         {session?.user ? (
@@ -54,9 +58,7 @@ export const Navbar = () => {
             <Key className="w-6 h-6" />
           </Button>
         )}
-        <Button variant="ghost" size="icon">
-          <ShoppingBag className="w-6 h-6" />
-        </Button>
+        <ShoppingCard />
       </div>
     </header>
   );
