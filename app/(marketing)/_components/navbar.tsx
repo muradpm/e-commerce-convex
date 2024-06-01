@@ -26,21 +26,21 @@ export const Navbar = () => {
   const scrolled = useScrollTop();
 
   return (
-    <div
+    <header
       className={cn(
-        "z-50 bg-background fixed top-0 flex items-center justify-between w-full p-6",
+        "z-50 bg-background fixed top-0 flex items-center justify-between w-full px-12 py-6",
         scrolled && "border-b shadow-sm"
       )}
     >
       <Image src="/logo.svg" width={40} height={40} alt="Footer logo" />
-      <div className="flex-grow text-center">
+      <div className="lg:flex lg:gap-x-12">
         {navigation.map((item) => (
           <ScrollLink
             key={item.name}
             to={item.href}
             smooth={true}
             duration={500}
-            className="text-xl leading-6 cursor-pointer mx-6"
+            className="text-xl font-normal leading-6 cursor-pointer"
           >
             {item.name}
           </ScrollLink>
@@ -58,6 +58,6 @@ export const Navbar = () => {
           <ShoppingBag className="w-6 h-6" />
         </Button>
       </div>
-    </div>
+    </header>
   );
 };

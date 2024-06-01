@@ -4,17 +4,42 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import { GoodsCard } from "@/components/goods-card";
 
-export const Goods = () => {
+import { useQuery } from "convex/react";
+
+import { api } from "@/convex/_generated/api";
+
+export const GoodsSection = () => {
+  const data = useQuery(api.goods.get);
+
   return (
-    <div className="max-w-3xl space-y-4">
-      <h3 className="text-base text-muted-foreground sm:text-sm md:text-xl">Товары</h3>
+    <div>
+      <h3 className="text-base text-muted-foreground sm:text-sm md:text-xl pb-6">
+        Товары
+      </h3>
       <Tabs defaultValue="latte">
-        <TabsList className="grid w-full grid-cols-3">
+        <TabsList>
           <TabsTrigger value="latte">Латте</TabsTrigger>
-          <TabsTrigger value="robusta">Робаста</TabsTrigger>
-          <TabsTrigger value="arabica">Арабика</TabsTrigger>
+          <TabsTrigger value="robusta" disabled>
+            Робаста
+          </TabsTrigger>
+          <TabsTrigger value="arabica" disabled>
+            Арабика
+          </TabsTrigger>
         </TabsList>
-        <TabsContent value="latte">{/* TODO: Add goods cards */}</TabsContent>
+        <TabsContent value="latte">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-5 mt-8 pb-10">
+            {data?.map((goods) => (
+              <GoodsCard
+                key={goods._id}
+                name={goods.name}
+                image={goods.image}
+                description={goods.description}
+                price={goods.price}
+                onClick={() => {}}
+              />
+            ))}
+          </div>
+        </TabsContent>
         <TabsContent value="robusta"></TabsContent>
         <TabsContent value="arabica"></TabsContent>
       </Tabs>
