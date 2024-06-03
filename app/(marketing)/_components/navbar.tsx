@@ -9,14 +9,13 @@ import { useScrollTop } from "@/hooks/use-scroll-top";
 import { Button } from "@/components/ui/button";
 
 import { UserNav } from "@/components/user-nav";
+import { Cart } from "@/components/cart";
 
 import { Link as ScrollLink } from "react-scroll";
 
 import { cn } from "@/lib/utils";
 
 import { Key } from "lucide-react";
-
-import { ShoppingCard } from "@/components/shopping-card";
 
 const navigation = [
   { name: "Главная", href: "main" },
@@ -58,7 +57,7 @@ export const Navbar = () => {
             <Key className="w-6 h-6" />
           </Button>
         )}
-        <ShoppingCard />
+        <Cart />
       </div>
     </header>
   );
