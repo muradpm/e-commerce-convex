@@ -92,7 +92,7 @@ export const Footer = () => {
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
-      <div className="ml-20 p-12">
+      <div className="p-12">
         <div className="grid grid-cols-4 gap-8">
           <div className="space-y-8 col-span-1">
             <div className="flex items-center space-x-4">
@@ -107,7 +107,7 @@ export const Footer = () => {
               <p className="text-sm leading-4 text-white">Phone : +7 (133) 742 00 07</p>
             </div>
           </div>
-          <div className="col-span-1">
+          <div className="col-span-1 ml-16">
             <h3 className="text-xl text-white font-normal leading-6">Быстрые ссылки</h3>
             <ul role="list" className="mt-6 space-y-4">
               {navigation.solutions.map((item) => (
@@ -122,7 +122,7 @@ export const Footer = () => {
               ))}
             </ul>
           </div>
-          <div className="col-span-1">
+          <div className="col-span-1 ml-16">
             <h3 className="text-xl text-white font-normal leading-6">Ресурсы</h3>
             <ul role="list" className="mt-6 space-y-4">
               {navigation.legal.map((item) => (
@@ -137,7 +137,7 @@ export const Footer = () => {
               ))}
             </ul>
           </div>
-          <div className="col-span-1">
+          <div className="col-span-1 ml-16">
             <h3 className="text-xl text-white font-normal leading-6">Социальные сети</h3>
             <div className="flex mt-6 space-x-6">
               {navigation.social.map((item) => (
