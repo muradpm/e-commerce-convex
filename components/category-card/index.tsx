@@ -20,7 +20,7 @@ export const CategoryCard = ({ name, image, onClick }: CategoryCardProps) => {
         <Image src={image} alt={name} fill className="object-cover" />
         <CategoryCardOverlay />
       </div>
-      <CategoryCardFooter title={name} onClick={onClick} />
+      <CategoryCardFooter name={name} onClick={onClick} />
     </div>
   );
 };

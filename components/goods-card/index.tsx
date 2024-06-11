@@ -28,7 +28,8 @@ export const GoodsCard = ({
         <GoodsCardOverlay />
       </div>
       <GoodsCardFooter
-        title={name}
+        name={name}
+        image={image}
         description={description}
         price={price}
         onClick={onClick}

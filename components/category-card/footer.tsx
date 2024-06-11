@@ -1,14 +1,14 @@
 "use client";
 
 interface CategoryCardFooterProps {
-  title: string;
+  name: string;
   onClick: () => void;
 }
 
-export const CategoryCardFooter = ({ title, onClick }: CategoryCardFooterProps) => {
+export const CategoryCardFooter = ({ name, onClick }: CategoryCardFooterProps) => {
   return (
     <div className="relative p-3">
-      <p className="text-xl">{title}</p>
+      <p className="text-xl">{name}</p>
     </div>
   );
 };
