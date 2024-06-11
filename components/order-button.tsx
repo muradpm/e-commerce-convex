@@ -26,7 +26,7 @@ export const OrderButton = ({ params }: OrderButtonProps) => {
       .then(() => {
         toast.success("Товар добавлен в корзину");
       })
-      .catch(() => toast.error("Не удалось добавить товар в корзину"));
+      .catch(() => toast.error("Авторизуйтесь для добавления товара"));
   };
 
   return (

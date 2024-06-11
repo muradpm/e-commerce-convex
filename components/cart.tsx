@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 
+import { toast } from "sonner";
+
 import { ShoppingBag, Trash } from "lucide-react";
 
 import { EmptyCartState } from "./empty-cart-state";
@@ -26,14 +28,16 @@ import { api } from "@/convex/_generated/api";
 
 export function Cart() {
   const data = useQuery(api.orders.get);
-  const { mutate } = useApiMutation(api.orders.remove);
+  const { mutate, pending } = useApiMutation(api.orders.remove);
 
   if (!data) {
     return null;
   }
 
   const onRemove = (id: string) => {
-    mutate({ id });
+    mutate({ id })
+      .then(() => toast.success("Товар удален из корзины"))
+      .catch(() => toast.error("Авторизуйтесь для удаления товара"));
   };
 
   const itemCount = data.length;
@@ -77,6 +81,7 @@ export function Cart() {
                 variant="destructive"
                 size="icon"
                 onClick={() => onRemove(item._id)}
+                disabled={pending}
               >
                 <Trash className="w-4 h-4" />
               </Button>

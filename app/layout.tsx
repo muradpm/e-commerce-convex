@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import ConvexClientProvider from "@/app/ConvexClientProvider";
-import { auth, signOut } from "@/auth";
+
 import { Button } from "@/components/ui/button";
+import { Toaster } from "@/components/ui/sonner";
+
+import { Inter } from "next/font/google";
+
+import ConvexClientProvider from "@/app/ConvexClientProvider";
+
+import { auth, signOut } from "@/auth";
+
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +29,7 @@ export default async function RootLayout({
       <body className={inter.className}>
         <ConvexClientProvider session={session}>
           <main>{children}</main>
+          <Toaster />
         </ConvexClientProvider>
       </body>
     </html>
