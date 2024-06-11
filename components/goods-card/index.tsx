@@ -22,7 +22,7 @@ export const GoodsCard = ({
   onClick,
 }: GoodsCardProps) => {
   return (
-    <div className="group aspect-[100/127] h-[300px] shadow-sm rounded-lg flex flex-col justify-between overflow-hidden relative cursor-pointer">
+    <div className="group aspect-[1/1] w-[240px] h-[300px] shadow-sm rounded-lg flex flex-col justify-between overflow-hidden relative cursor-pointer">
       <div className="relative flex-1 bg-background">
         <Image src={image} alt={name} fill className="object-cover" />
         <GoodsCardOverlay />
