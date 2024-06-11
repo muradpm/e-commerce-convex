@@ -26,20 +26,29 @@ export const GoodsSection = () => {
             Арабика
           </TabsTrigger>
         </TabsList>
-        <TabsContent value="latte">
+        {data === undefined ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-5 mt-8 pb-10">
-            {data?.map((goods) => (
-              <GoodsCard
-                key={goods._id}
-                name={goods.name}
-                image={goods.image}
-                description={goods.description}
-                price={goods.price}
-                onClick={() => {}}
-              />
-            ))}
+            <GoodsCard.Skeleton />
+            <GoodsCard.Skeleton />
+            <GoodsCard.Skeleton />
+            <GoodsCard.Skeleton />
           </div>
-        </TabsContent>
+        ) : (
+          <TabsContent value="latte">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-5 mt-8 pb-10">
+              {data?.map((goods) => (
+                <GoodsCard
+                  key={goods._id}
+                  name={goods.name}
+                  image={goods.image}
+                  description={goods.description}
+                  price={goods.price}
+                  onClick={() => {}}
+                />
+              ))}
+            </div>
+          </TabsContent>
+        )}
         <TabsContent value="robusta"></TabsContent>
         <TabsContent value="arabica"></TabsContent>
       </Tabs>

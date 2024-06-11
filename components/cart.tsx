@@ -4,6 +4,8 @@ import Image from "next/image";
 
 import { toast } from "sonner";
 
+import { Skeleton } from "@/components/ui/skeleton";
+
 import { ShoppingBag, Trash } from "lucide-react";
 
 import { EmptyCartState } from "./empty-cart-state";
@@ -31,7 +33,7 @@ export function Cart() {
   const { mutate, pending } = useApiMutation(api.orders.remove);
 
   if (!data) {
-    return null;
+    return <CartSkeleton />;
   }
 
   const onRemove = (id: string) => {
@@ -93,3 +95,11 @@ export function Cart() {
     </Sheet>
   );
 }
+
+export const CartSkeleton = () => {
+  return (
+    <div>
+      <div className="w-8 h-8 animate-pulse rounded-full bg-muted"></div>
+    </div>
+  );
+};

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-import { Skeleton } from "../ui/skeleton";
+import { Skeleton } from "@/components/ui/skeleton";
 import { GoodsCardOverlay } from "./overlay";
 import { GoodsCardFooter } from "./footer";
 
@@ -40,7 +40,7 @@ export const GoodsCard = ({
 
 GoodsCard.Skeleton = function GoodsCardSkeleton() {
   return (
-    <div className="aspect-[100/100] rounded-lg overflow-hidden">
+    <div className="group aspect-[1/1] h-[240px] shadow-sm rounded-lg">
       <Skeleton className="h-full w-full" />
     </div>
   );

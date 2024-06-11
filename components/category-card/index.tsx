@@ -1,6 +1,6 @@
 "use client";
 
-import { Skeleton } from "../ui/skeleton";
+import { Skeleton } from "@/components/ui/skeleton";
 
 import Image from "next/image";
 
@@ -27,8 +27,8 @@ export const CategoryCard = ({ name, image, onClick }: CategoryCardProps) => {
 
 CategoryCard.Skeleton = function CategoryCardSkeleton() {
   return (
-    <div className="aspect-[100/127] rounded-lg overflow-hidden">
-      <Skeleton className="h-full w-full" />
+    <div className="group aspect-[1/1] h-[240px] shadow-sm rounded-lg">
+      <Skeleton className="w-full h-full" />
     </div>
   );
 };
