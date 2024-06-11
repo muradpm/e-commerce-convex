@@ -36,7 +36,7 @@ export default async function RootLayout({
   );
 }
 
-export function SignOut() {
+function SignOut() {
   return (
     <form
       onSubmit={async (e) => {

@@ -14,7 +14,10 @@ import { Doc, Id } from "../convex/_generated/dataModel";
 type User = AdapterUser & { id: Id<"users"> };
 type Session = AdapterSession & { userId: Id<"users"> };
 type Account = AdapterAccount & { userId: Id<"users"> };
-type Authenticator = AdapterAuthenticator & { userId: Id<"users"> };
+type Authenticator = AdapterAuthenticator & {
+  userId: Id<"users">;
+  transports?: string;
+};
 
 // 1. Simplest form, a plain object.
 export const ConvexAdapter: Adapter = {
