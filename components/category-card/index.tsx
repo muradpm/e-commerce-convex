@@ -15,8 +15,8 @@ interface CategoryCardProps {
 
 export const CategoryCard = ({ name, image, onClick }: CategoryCardProps) => {
   return (
-    <div className="group aspect-[1/1] h-[240px] shadow-sm rounded-lg flex flex-col justify-between overflow-hidden relative cursor-pointer">
-      <div className="relative flex-1 bg-background">
+    <div className="group aspect-[1/1] h-[240px] shadow-sm rounded-lg overflow-hidden relative cursor-pointer">
+      <div className="absolute inset-0 bg-background">
         <Image src={image} alt={name} fill className="object-cover" />
         <CategoryCardOverlay />
       </div>
