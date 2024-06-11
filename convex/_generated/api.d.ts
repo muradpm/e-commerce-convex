@@ -19,6 +19,7 @@ import type * as authAdapter from "../authAdapter.js";
 import type * as categories from "../categories.js";
 import type * as goods from "../goods.js";
 import type * as http from "../http.js";
+import type * as orders from "../orders.js";
 
 /**
  * A utility for referencing Convex functions in your app's API.
@@ -34,6 +35,7 @@ declare const fullApi: ApiFromModules<{
   categories: typeof categories;
   goods: typeof goods;
   http: typeof http;
+  orders: typeof orders;
 }>;
 export declare const api: FilterApi<
   typeof fullApi,

@@ -81,4 +81,11 @@ export default defineSchema({
     price: v.number(),
     description: v.string(),
   }),
+
+  orders: defineTable({
+    name: v.string(),
+    image: v.string(),
+    price: v.number(),
+    description: v.string(),
+  }),
 });
