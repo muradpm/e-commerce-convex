@@ -20,7 +20,7 @@ export const GoodsSection = () => {
         <TabsList>
           <TabsTrigger value="latte">Латте</TabsTrigger>
           <TabsTrigger value="robusta" disabled>
-            Робаста
+            Робуста
           </TabsTrigger>
           <TabsTrigger value="arabica" disabled>
             Арабика
