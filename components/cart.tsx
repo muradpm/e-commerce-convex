@@ -2,11 +2,7 @@
 
 import Image from "next/image";
 
-import { toast } from "sonner";
-
-import { Skeleton } from "@/components/ui/skeleton";
-
-import { ShoppingBag, Trash } from "lucide-react";
+import { ShoppingBag } from "lucide-react";
 
 import { EmptyCartState } from "./empty-cart-state";
 
@@ -24,23 +20,15 @@ import {
 
 import { useQuery } from "convex/react";
 
-import { useApiMutation } from "@/hooks/use-api-mutation";
-
 import { api } from "@/convex/_generated/api";
+import { DeleteOrderButton } from "./delete-order-button";
 
 export function Cart() {
-  const data = useQuery(api.orders.get);
-  const { mutate, pending } = useApiMutation(api.orders.remove);
+  const data = useQuery(api.orders.getAll);
 
   if (!data) {
     return <CartSkeleton />;
   }
-
-  const onRemove = (id: string) => {
-    mutate({ id })
-      .then(() => toast.success("Товар удален из корзины"))
-      .catch(() => toast.error("Авторизуйтесь для удаления товара"));
-  };
 
   const itemCount = data.length;
 
@@ -79,14 +67,7 @@ export function Cart() {
                 <p className="text-sm text-gray-500">{item.description}</p>
                 <p className="text-lg font-bold mt-2">{item.price} P</p>
               </div>
-              <Button
-                variant="destructive"
-                size="icon"
-                onClick={() => onRemove(item._id)}
-                disabled={pending}
-              >
-                <Trash className="w-4 h-4" />
-              </Button>
+              <DeleteOrderButton itemId={item._id} />
             </div>
           ))
         )}
