@@ -24,10 +24,9 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 ## Features
 
-- **Effortless Document Creation:** Write essays, reports, and other documents with ease.
-- **Efficient Collaboration:** Share your work, enhancing teamwork and productivity.
-- **AI-powered Enhancements:** Elevate your writing with AI-powered analysis.
-- **Progress Tracking:** Monitor your writing progress over time.
+- **Authentication:** Securely log in and manage your profile.
+- **Shopping Cart:** Easily add and remove items from your shopping cart.
+- **Auth validation:** Ensure secure and reliable user sessions.
 
 ## Project Structure
 
