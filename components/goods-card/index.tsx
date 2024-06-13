@@ -11,6 +11,7 @@ interface GoodsCardProps {
   name: string;
   price: number;
   image: string;
+  goodsId: string;
   onClick: () => void;
 }
 
@@ -19,6 +20,7 @@ export const GoodsCard = ({
   name,
   price,
   image,
+  goodsId,
   onClick,
 }: GoodsCardProps) => {
   return (
@@ -32,6 +34,7 @@ export const GoodsCard = ({
         image={image}
         description={description}
         price={price}
+        goodsId={goodsId}
         onClick={onClick}
       />
     </div>

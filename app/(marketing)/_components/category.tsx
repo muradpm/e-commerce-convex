@@ -6,7 +6,7 @@ import { useQuery } from "convex/react";
 import { api } from "@/convex/_generated/api";
 
 export const CategorySection = () => {
-  const data = useQuery(api.categories.get);
+  const data = useQuery(api.categories.getAll);
 
   return (
     <div>

@@ -80,6 +80,7 @@ export default defineSchema({
     image: v.string(),
     price: v.number(),
     description: v.string(),
+    categoryId: v.string(),
   }),
 
   orders: defineTable({
@@ -87,5 +88,7 @@ export default defineSchema({
     image: v.string(),
     price: v.number(),
     description: v.string(),
+    goodsId: v.string(),
+    userId: v.id("users"),
   }),
 });

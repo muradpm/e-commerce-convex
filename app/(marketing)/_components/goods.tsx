@@ -9,7 +9,7 @@ import { useQuery } from "convex/react";
 import { api } from "@/convex/_generated/api";
 
 export const GoodsSection = () => {
-  const data = useQuery(api.goods.get);
+  const data = useQuery(api.goods.getAll);
 
   return (
     <div>
@@ -43,6 +43,7 @@ export const GoodsSection = () => {
                   image={goods.image}
                   description={goods.description}
                   price={goods.price}
+                  goodsId={goods._id}
                   onClick={() => {}}
                 />
               ))}

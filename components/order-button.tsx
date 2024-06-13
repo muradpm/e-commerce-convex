@@ -15,11 +15,12 @@ interface OrderButtonProps {
     price: number;
     image: string;
     description: string;
+    goodsId: string;
   };
 }
 
 export const OrderButton = ({ params }: OrderButtonProps) => {
-  const { mutate, pending } = useApiMutation(api.goods.add);
+  const { mutate, pending } = useApiMutation(api.goods.addToCart);
 
   const onClick = () => {
     mutate(params)

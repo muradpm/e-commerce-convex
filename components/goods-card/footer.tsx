@@ -7,6 +7,7 @@ interface GoodsCardFooterProps {
   image: string;
   description: string;
   price: number;
+  goodsId: string;
   onClick: () => void;
 }
 
@@ -15,6 +16,7 @@ export const GoodsCardFooter = ({
   image,
   description,
   price,
+  goodsId,
   onClick,
 }: GoodsCardFooterProps) => {
   return (
@@ -23,7 +25,7 @@ export const GoodsCardFooter = ({
       <p className="text-sm text-muted-foreground h-16 overflow-y-auto">{description}</p>
       <div className="flex items-center justify-between mt-2">
         <p className="text-lg font-bold">{price} P</p>
-        <OrderButton params={{ name, price, image, description }} />
+        <OrderButton params={{ name, price, image, description, goodsId }} />
       </div>
     </div>
   );
