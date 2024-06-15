@@ -10,7 +10,7 @@ export const EmptyCartState = () => {
       </div>
       <h2 className="text-2xl font-semibold mt-6">Cart is empty</h2>
       <p className="text-muted-foreground text-sm mt-2">
-        You haven't added any items to the cart yet.
+        You haven&apos;t added any items to the cart yet.
       </p>
     </div>
   );
