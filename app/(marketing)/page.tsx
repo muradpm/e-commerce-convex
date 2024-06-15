@@ -6,7 +6,7 @@ const MarketingPage = () => {
   return (
     <div>
       <div className="flex flex-col items-center justify-center md:justify-start text-center gap-y-8 flex-1">
-        <div id="main">
+        <div id="category">
           <CategorySection />
         </div>
         <div id="goods">

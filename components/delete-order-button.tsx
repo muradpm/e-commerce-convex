@@ -13,8 +13,8 @@ export const DeleteOrderButton = ({ itemId }: DeleteOrderButtonProps) => {
 
   const onRemove = (id: string) => {
     mutate({ id })
-      .then(() => toast.success("Товар удален из корзины"))
-      .catch(() => toast.error("Авторизуйтесь для удаления товара"));
+      .then(() => toast.success("Item removed from cart"))
+      .catch(() => toast.error("Please log in to delete the item"));
   };
 
   return (

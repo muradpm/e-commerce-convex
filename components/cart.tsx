@@ -67,7 +67,7 @@ export function Cart() {
       </SheetTrigger>
       <SheetContent className="w-[400px] sm:w-[640px]">
         <SheetHeader>
-          <SheetTitle className="text-2xl font-bold mb-10">Корзина</SheetTitle>
+          <SheetTitle className="text-2xl font-bold mb-10">Cart</SheetTitle>
         </SheetHeader>
         {data && data.length === 0 ? (
           <EmptyCartState />
@@ -87,7 +87,7 @@ export function Cart() {
                 <div className="flex-1">
                   <h3 className="text-lg font-semibold">{item.name}</h3>
                   <p className="text-sm text-gray-500">{item.description}</p>
-                  <p className="text-lg font-bold mt-2">{item.price} P</p>
+                  <p className="text-lg font-bold mt-2">{item.price} $</p>
                 </div>
                 <DeleteOrderButton itemId={item._id} />
               </div>

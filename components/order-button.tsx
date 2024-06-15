@@ -25,9 +25,9 @@ export const OrderButton = ({ params }: OrderButtonProps) => {
   const onClick = () => {
     mutate(params)
       .then(() => {
-        toast.success("Товар добавлен в корзину");
+        toast.success("Item added to cart");
       })
-      .catch(() => toast.error("Авторизуйтесь для добавления товара"));
+      .catch(() => toast.error("Please log in to add the item"));
   };
 
   return (

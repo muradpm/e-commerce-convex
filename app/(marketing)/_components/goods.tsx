@@ -14,16 +14,16 @@ export const GoodsSection = () => {
   return (
     <div>
       <h3 className="text-base text-muted-foreground sm:text-sm md:text-xl pb-6">
-        Товары
+        Goods
       </h3>
       <Tabs defaultValue="latte">
         <TabsList>
-          <TabsTrigger value="latte">Латте</TabsTrigger>
+          <TabsTrigger value="latte">Latte</TabsTrigger>
           <TabsTrigger value="robusta" disabled>
-            Робуста
+            Robusta
           </TabsTrigger>
           <TabsTrigger value="arabica" disabled>
-            Арабика
+            Arabica
           </TabsTrigger>
         </TabsList>
         {data === undefined ? (

@@ -2,6 +2,8 @@
 
 import { signIn, useSession } from "next-auth/react";
 
+import Link from "next/link";
+
 import Image from "next/image";
 
 import { useScrollTop } from "@/hooks/use-scroll-top";
@@ -25,8 +27,8 @@ import { cn } from "@/lib/utils";
 import { Key, Menu } from "lucide-react";
 
 const navigation = [
-  { name: "Главная", href: "main" },
-  { name: "Товары", href: "goods" },
+  { name: "Category", href: "category" },
+  { name: "Goods", href: "goods" },
 ];
 
 export const Navbar = () => {
@@ -40,7 +42,9 @@ export const Navbar = () => {
         scrolled && "border-b shadow-sm"
       )}
     >
-      <Image src="/logo.svg" width={40} height={40} alt="Logo" />
+      <Link href="/">
+        <Image src="/logo.svg" width={40} height={40} alt="Logo" />
+      </Link>
       <div className="hidden lg:block">
         <div className="flex gap-x-12">
           {navigation.map((item) => (
@@ -83,7 +87,7 @@ export const Navbar = () => {
           </SheetTrigger>
           <SheetContent className="w-[400px] sm:w-[640px]">
             <SheetHeader>
-              <SheetTitle className="text-2xl font-bold mb-10">Меню</SheetTitle>
+              <SheetTitle className="text-2xl font-bold mb-10">Menu</SheetTitle>
             </SheetHeader>
             <div className="flex flex-col items-start">
               {navigation.map((item) => (

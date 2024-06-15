@@ -24,7 +24,7 @@ export const GoodsCardFooter = ({
       <p className="text-xl">{name}</p>
       <p className="text-sm text-muted-foreground h-16 overflow-y-auto">{description}</p>
       <div className="flex items-center justify-between mt-2">
-        <p className="text-lg font-bold">{price} P</p>
+        <p className="text-lg font-bold">{price} $</p>
         <OrderButton params={{ name, price, image, description, goodsId }} />
       </div>
     </div>

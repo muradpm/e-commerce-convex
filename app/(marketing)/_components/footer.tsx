@@ -2,19 +2,21 @@
 
 import React, { SVGProps } from "react";
 
+import Link from "next/link";
+
 import Image from "next/image";
 
 const navigation = {
   solutions: [
-    { name: "Сервис", href: "#" },
-    { name: "Портфолио", href: "#" },
-    { name: "О нас", href: "#" },
-    { name: "Контакты", href: "#" },
+    { name: "Category", href: "#" },
+    { name: "Goods", href: "#" },
+    { name: "About us", href: "#" },
+    { name: "Contacts", href: "#" },
   ],
   legal: [
-    { name: "Поддержка", href: "#" },
-    { name: "Публичная офферта", href: "#" },
-    { name: "Условия использования", href: "#" },
+    { name: "Support", href: "#" },
+    { name: "Privacy policy", href: "#" },
+    { name: "Terms of use", href: "#" },
   ],
   social: [
     {
@@ -96,19 +98,22 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-8 col-span-1">
             <div className="flex items-center space-x-4">
-              <Image src="/logo-dark.svg" height="40" width="40" alt="Logo" />
-              <p className="text-3xl text-white font-normal">Ngopi</p>
+              <Link href="/">
+                <Image src="/logo-dark.svg" height="40" width="40" alt="Logo" />
+              </Link>
+              <p className="text-3xl text-white font-normal">Coffeecom</p>
             </div>
+
             <p className="text-sm leading-2 text-white">
-              Онлайн-сервис для удобства и быстроты заказа кофе.
+              Online service for convenience and fast order of coffee.
             </p>
             <div className="flex flex-col gap-2">
-              <p className="text-sm leading-4 text-white">baba@boi.com</p>
-              <p className="text-sm leading-4 text-white">Phone : +7 (133) 742 00 07</p>
+              <p className="text-sm leading-4 text-white">support@coffee.com</p>
+              <p className="text-sm leading-4 text-white">Phone : +1 555 555 55 55</p>
             </div>
           </div>
           <div className="col-span-1">
-            <h3 className="text-xl text-white font-normal leading-6">Быстрые ссылки</h3>
+            <h3 className="text-xl text-white font-normal leading-6">Quick links</h3>
             <ul role="list" className="mt-6 space-y-4">
               {navigation.solutions.map((item) => (
                 <li key={item.name}>
@@ -123,7 +128,7 @@ export const Footer = () => {
             </ul>
           </div>
           <div className="col-span-1">
-            <h3 className="text-xl text-white font-normal leading-6">Ресурсы</h3>
+            <h3 className="text-xl text-white font-normal leading-6">Resources</h3>
             <ul role="list" className="mt-6 space-y-4">
               {navigation.legal.map((item) => (
                 <li key={item.name}>
@@ -138,7 +143,7 @@ export const Footer = () => {
             </ul>
           </div>
           <div className="col-span-1">
-            <h3 className="text-xl text-white font-normal leading-6">Социальные сети</h3>
+            <h3 className="text-xl text-white font-normal leading-6">Social networks</h3>
             <div className="flex mt-6 space-x-6">
               {navigation.social.map((item) => (
                 <a
